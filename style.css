@@ -1,0 +1,343 @@
+/* VARIÁVEIS */
+:root {
+    --wayne-dark: #0d0d0d;
+    --wayne-primary: #8d9b14;
+    --wayne-secondary: #003366;
+    --wayne-accent: #ffd700;
+    --wayne-light: #e6e6e6;
+    --wayne-gray: #333333;
+
+    /* Cores vilões */
+    --charada: #34a853;
+    --pinguim: #4a0681;
+    --senhor-frio: #63b3ed;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--wayne-dark);
+    color: var(--wayne-light);
+    line-height: 1.6;
+}
+
+/* HEADER */
+.header-wayne {
+    background-color: var(--wayne-dark);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--wayne-primary);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 50px;
+}
+
+.division {
+    color: var(--wayne-accent);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-wayne ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-wayne a {
+    color: var(--wayne-light);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-wayne a:hover,
+.nav-wayne a.active {
+    color: var(--wayne-accent);
+}
+
+.nav-wayne a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--wayne-accent);
+    transition: width 0.3s;
+}
+
+.nav-wayne a:hover::after,
+.nav-wayne a.active::after {
+    width: 100%;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.status-alerta {
+    display: flex;
+    background-color: var(--wayne-gray);
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.bat-sinal-container {
+    width: 40%;
+}
+
+.bat-sinal-container img {
+    width: 95%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.status-info {
+    width: 60%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.status-info h1 {
+    color: var(--wayne-accent);
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.status-info p {
+    margin-bottom: 1.5rem;
+}
+
+.alert-level {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.level-indicator {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+}
+
+.level-3 {
+    background-color: #f6ad55;
+}
+
+ /*acessos*/
+.quick-access {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.access-card {
+    background-color: var(--wayne-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--wayne-light);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 4px solid var(--wayne-primary);
+}
+
+.access-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.access-card h2 {
+    color: var(--wayne-accent);
+    margin-bottom: 0.5rem;
+}
+/* SEÇÃO DE VILÕES DO BATMAN*/
+.viloes-section {
+    padding: 2rem 0;
+}
+
+.section-title {
+    color: var(--wayne-accent);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--wayne-light);
+    opacity: 0.8;
+}
+
+.viloes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.vilao-card {
+    background-color: var(--wayne-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.vilao-card:hover {
+    transform: translateY(-5px);
+}
+
+.vilao-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.vilao-card.charada .vilao-header {
+    border-bottom: 3px solid var(--charada);
+}
+
+.vilao-card.pinguim .vilao-header {
+    border-bottom: 3px solid var(--pinguim);
+}
+
+.vilao-card.senhor-frio .vilao-header {
+    border-bottom: 3px solid var(--senhor-frio);
+}
+
+.vilao-header h2 {
+    font-size: 1.8rem;
+}
+
+.vilao-card.charada h2 {
+    color: var(--charada);
+}
+
+.vilao-card.pinguim h2 {
+    color: var(--pinguim);
+}
+
+.vilao-card.senhor-frio h2 {
+    color: var(--senhor-frio);
+}
+
+.threat-level {
+    background-color: var(--wayne-dark);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.vilao-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+}
+.vilao-image
+
+.vilao-info {
+    padding: 1.5rem;
+}
+
+.vilao-info p {
+    margin-bottom: 1rem;
+}
+
+.vilao-info strong {
+    color: var(--wayne-accent);
+}
+
+.vilao-desc {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-left: 3px solid var(--wayne-primary);
+    font-style: italic;
+}
+
+.vilao-skills {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.vilao-skills li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.vilao-skills li::before {
+    content: "•";
+    color: var(--wayne-accent);
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+/* FOOTER */
+.footer-wayne {
+    background-color: var(--wayne-dark);
+    padding: 2rem;
+    text-align: center;
+    border-top: 3px solid var(--wayne-primary);
+    margin-top: 3rem;
+}
+
+.footer-wayne p {
+    margin-bottom: 0.5rem;
+    color: var(--wayne-light);
+    opacity: 0.8;
+}
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .header-wayne {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-wayne ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .status-alerta {
+        flex-direction: column;
+    }
+
+    .bat-sinal-container,
+    .status-info {
+        width: 100%;
+    }
+
+    .viloes-grid {
+        grid-template-columns: 1fr;
+    }
+}
